@@ -1,0 +1,40 @@
+<div>
+  <span class="title margin-botton-10">
+    Carrito <span class="subtitle">({{carrito.length}}) producto(s)</span>
+  </span>
+</div>
+
+<div *ngIf="carrito.length>0;else carritovaciotmpl">
+  <table class="margin-top-20">
+    <thead>
+      <tr>
+        <td style="width:20%">Ctdad.</td>
+        <td>Producto</td>
+        <td>Precio</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of carrito">
+        <td  class="has-text-centered">
+          <span>1</span>
+        </td>
+        <td>{{item.titulo}}</td>
+        <td>{{item.precio}}€</td>
+      </tr>      
+    </tbody>
+    <tfoot>
+        <tr class="carrito-total">
+          <td colspan="2"></td>
+          <td>
+            Total: {{total}}€
+          </td>
+        </tr>
+    </tfoot>
+  </table>
+</div>
+
+<ng-template #carritovaciotmpl>
+  <div class="margin-top-20">
+    <strong>El carrito esta vacío.</strong>
+  </div>
+</ng-template>

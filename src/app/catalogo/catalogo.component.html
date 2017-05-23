@@ -1,0 +1,30 @@
+<div>
+  <span class="title margin-botton-10">
+    Catálogo
+  </span>
+</div>
+
+<article class="message" *ngFor="let producto of productos">
+  <div class="message-header">
+    <p class="subtitle white">{{producto.titulo}}</p>
+  </div>
+  <div class="message-body">
+    {{producto.descripcion}}
+    <br> Precio: {{producto.precio}} €
+    <div class="message-footer">
+      <button (click)="addProducto(producto)" class="button is-info">Añadir al carrito</button>
+    </div>
+  </div>
+</article>
+
+<!--<article class="message" *ngIf="producto">
+  <div class="message-header">
+    <p>Mensaje</p>
+    <button class="delete"></button>
+  </div>
+  <div class="message-body">
+    {{producto.titulo}}
+    <br>
+    {{producto.precio}}
+  </div>
+</article>-->
